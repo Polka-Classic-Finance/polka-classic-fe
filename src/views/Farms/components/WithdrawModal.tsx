@@ -19,7 +19,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
   const TranslateString = useI18n()
   const fullBalance = useMemo(() => {
     if(tokenName === "DOTC")
-    return getFullDisplayBalance(max, 9)
+    return getFullDisplayBalance(max, 18)
     return getFullDisplayBalance(max)
   }, [max, tokenName])
 // kevin updated

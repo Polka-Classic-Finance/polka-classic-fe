@@ -20,7 +20,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
   const TranslateString = useI18n()
   const fullBalance = useMemo(() => {
     if(tokenName === "DOTC")
-    return getFullDisplayBalance(max, 9)
+    return getFullDisplayBalance(max, 18)
     return getFullDisplayBalance(max)
   }, [max, tokenName])
   // kevin updated

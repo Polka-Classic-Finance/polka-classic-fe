@@ -99,12 +99,12 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
         // }
-        let cakeRewardPerBlock = new BigNumber(farm.dotcPerBlock || 1).times(new BigNumber(farm.poolWeight)) .div(new BigNumber(10).pow(18))
-        if (farm.pid === 2) {
-          cakeRewardPerBlock = new BigNumber(farm.marsPerBlock || 1)
-            .times(new BigNumber(farm.poolWeight))
-            .div(new BigNumber(10).pow(9))
-        }
+        const cakeRewardPerBlock = new BigNumber(farm.dotcPerBlock || 1).times(new BigNumber(farm.poolWeight)) .div(new BigNumber(10).pow(18))
+        // if (farm.pid === 2) {
+        //   cakeRewardPerBlock = new BigNumber(farm.marsPerBlock || 1)
+        //     .times(new BigNumber(farm.poolWeight))
+        //     .div(new BigNumber(10).pow(9))
+        // }
         // kevin updated
         const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
 

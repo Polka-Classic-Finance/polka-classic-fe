@@ -8,8 +8,8 @@ export const approve = async (lpContract, masterChefContract, account) => {
 }
 
 export const stake = async (masterChefContract, pid, amount, account) => {
-  let decimal = 18
-  if (pid === 2) decimal = 9
+  const decimal = 18
+  // if (pid === 2) decimal = 9
   // kevin updated
   return masterChefContract.methods
     .deposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(decimal)).toString())
@@ -38,8 +38,8 @@ export const sousStakeBnb = async (sousChefContract, amount, account) => {
 }
 
 export const unstake = async (masterChefContract, pid, amount, account) => {
-  let decimal = 18
-  if (pid === 2) decimal = 9
+  const decimal = 18
+  // if (pid === 2) decimal = 9
   //  kevin updated
   return masterChefContract.methods
     .withdraw(pid, new BigNumber(amount).times(new BigNumber(10).pow(decimal)).toString())

@@ -70,7 +70,7 @@ export const usePoolFromPid = (sousId): Pool => {
 // Prices
 
 export const usePriceBnbBusd = (): BigNumber => {
-  const pid = 0 // BUSD-BNB LP
+  const pid = 2 // BUSD-BNB LP
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO
 }
@@ -103,7 +103,7 @@ export const useTotalValue = (): BigNumber => {
       }
 
       if (farm.lpSymbol === "DOTC") {
-        val = new BigNumber(farm.lpTotalInQuoteToken).div(1e09);
+        val = new BigNumber(farm.lpTotalInQuoteToken).div(1e18);
         // kevin updated
       }
 
